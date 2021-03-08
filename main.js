@@ -64,14 +64,10 @@ truncate = (str) => {
   if (str.length < 15) {
     return str;
   }
-
   let result = '';
   for (let i = 0; i <= 15; i++) {
-    result = result + str[i].slice(0, 8)
+    return str.slice(0, 8) + "..."
   }
-  
-  result = result + '...'
-  return result;
 }
 
 function isValidPassword() {}
