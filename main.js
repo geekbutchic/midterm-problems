@@ -1,45 +1,82 @@
-function isEvenlyDivisible() {
+function isEvenlyDivisible(x, y) {
+  if (x % y !== 0) {
+    return false;
+  } else {
+    return true;
+  }
 }
 
-function halfSquare() {
+function halfSquare(x) {
+  let value = Math.pow(x, 2);
+  return value / 2;
 }
 
-function isLong() {
+function isLong(str) {
+  if (str.length < 15) {
+    return false;
+  }
+
+  if (str.length >= 15) {
+    return true;
+  }
 }
 
-function exclaim() {
+function exclaim() {}
+// exclaim = (str) => {
+//   let result = '';
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i - 1] !== i) {
+//       return result += "1"
+//     }
+//   }
+//   return result;
+// }
+
+function countWords() {}
+
+containsDigit = (str) => {
+  for (const value of str) {
+    if (value % 1 === 0) {
+      return true; 
+    } else if (typeof str !== 'string') {
+      return false;
+    }
+  }
+};
+function containsLowerCase() {}
+
+function containsUpperCase() {}
+
+function containsNonAlphanumeric() {}
+
+containsSpace = (str) => {
+  if (str.split(" ").length - 1) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+function digits() {}
+
+truncate = (str) => {
+  if (str.length < 15) {
+    return str;
+  }
+
+  let result = '';
+  for (let i = 0; i <= 15; i++) {
+    result = result + str[i].slice(0, 8)
+  }
+  
+  result = result + '...'
+  return result;
 }
 
-function countWords() {
-}
+function isValidPassword() {}
 
-function containsDigit() {
-}
-
-function containsLowerCase() {
-}
-
-function containsUpperCase() {
-}
-
-function containsNonAlphanumeric() {
-}
-
-function containsSpace() {
-}
-
-function digits() {
-}
-
-function truncate() {
-}
-
-function isValidPassword() {
-}
-
-function onlyPunchy() {
-}
-
+function onlyPunchy() {}
 
 module.exports = {
   isEvenlyDivisible,
@@ -56,4 +93,4 @@ module.exports = {
   truncate,
   isValidPassword,
   onlyPunchy,
-}
+};
