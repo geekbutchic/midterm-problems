@@ -21,34 +21,58 @@ function isLong(str) {
   }
 }
 
-function exclaim() {}
-// exclaim = (str) => {
-//   let result = '';
+exclaim = (str) => {
+  let result = '';
 
-//   for (let i = 0; i < str.length; i++) {
-//     if (str[i - 1] !== i) {
-//       return result += "1"
-//     }
-//   }
-//   return result;
-// }
+  for (let i = 0; i < str.length; i++) {
+    if (str[str.length - 1]) {
+      return str.slice() + '!'
+    } 
+    if (str[str.length - 1] === "!") {
+      return str
+    }
+  }
+  // return result;
+}
 
 function countWords() {}
 
 containsDigit = (str) => {
   for (const value of str) {
-    if (value % 1 === 0) {
+    if (value % 1 === 0 || typeof str !== 'string') {
       return true; 
-    } else if (typeof str !== 'string') {
+    } else if (typeof str === 'string') {
       return false;
     }
   }
+  return isNaN(str)||typeof(str)!=="number"? false:true
 };
-function containsLowerCase() {}
 
-function containsUpperCase() {}
 
-function containsNonAlphanumeric() {}
+function containsLowerCase(ch) {
+  if (ch === ch.toLowerCase() && ch !== ch.toUpperCase()) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+
+function containsUpperCase(str) {
+  if (str === str.toUpperCase() && str !== str.toLowerCase()) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function containsNonAlphanumeric(str) {
+  if (str === str.containsNonAlphanumeric && str !== str.containsNonAlphanumeric) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 containsSpace = (str) => {
   if (str.split(" ").length - 1) {
@@ -70,7 +94,15 @@ truncate = (str) => {
   }
 }
 
-function isValidPassword() {}
+function isValidPassword(str) {
+  if (
+    str.length >= 8 && str.toUpperCase() !== str && str.toLowerCase() !== str && str.containsNonAlphanumeric
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 function onlyPunchy() {}
 
