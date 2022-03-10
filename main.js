@@ -10,29 +10,11 @@ const isLong = (str) => {
   return str.length >= 15 ? true : false;
 };
 
-// exclaim = (str) => {
-//   let numExclamationMarks = 0;
-//   for (let i = str.length - 1; i >= 0; i--) {
-//     if (str[i] === "!") {
-//       numExclamationMarks++;
-//     } else {
-//       break;
-//     }
-//   }
-//   let exclamationlessStr = "";
-//   for (let i = 0; i < str.length - numExclamationMarks; i++) {
-//     exclamationlessStr += str[i];
-//   }
-//   return exclamationlessStr + "!";
-// };
-
-const exclaim = (str) => {
-  if (str.indexOf("!" === -1)){
-    str += "!"
-  }
-  return str
-  if (str.indexOf("!") === str.length -1) {
-    return str;
+function exclaim(str) {
+  if (str.indexOf("!") === -1) {
+    return str + "!";
+  } else {
+    return str.substring(0, str.indexOf("!") + 1);
   }
 }
 
@@ -52,7 +34,20 @@ const containsLowerCase = (str) => {
   // CHECKS FOR LOWER CASE CHAR
 };
 
-const countWords = () => {};
+const countWords = (str) => {
+  spaceCounter = 1;
+  oneWord = 1;
+    if(!str.includes(" ")){
+      return oneWord;
+    }
+    else{
+  for(let i = 0 ; i <= str.length; i++){
+    if(str[i] === " "){
+      spaceCounter = spaceCounter +1;
+    }
+  }
+}return spaceCounter;
+}
 
 const containsUpperCase = (str) => {
   const regexp = /\.*[A-Z].*/g;
@@ -67,9 +62,11 @@ const containsNonAlphanumeric = (str) => {
   return regexp.test(str);
 };
 
-function digits() {}
+const digits = () => {
 
-containsSpace = (str) => {
+};
+
+const containsSpace = (str) => {
   if (str.split(" ").length - 1) {
     return true;
   } else {
@@ -86,9 +83,21 @@ const truncate = (str) => {
   }
 };
 
-function isValidPassword() {}
+const isValidPassword = (str) => {
+  return (
+    containsUpperCase(str) &&
+    containsLowerCase(str) &&
+    containsDigit(str) &&
+    containsNonAlphanumeric(str) &&
+    !containsSpace(str)
+  );
+};
 
-function onlyPunchy() {}
+const onlyPunchy = (titles) => {
+  const exclaimedTitles = titles.map(exclaim);
+  const punchyTitles = exclaimedTitles.filter((title) => title.length < 15);
+  return punchyTitles;
+};
 
 module.exports = {
   isEvenlyDivisible,

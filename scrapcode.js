@@ -89,7 +89,7 @@ function isEvenlyDivisible(x, y) {
       // 1. Is the char a letter?
       const isLetter = char.toLowerCase() !== char.toUpperCase();
   
-      // 2. If so, is the lowercased version of that char equal to the original char
+      // 2. If so, is the lowercase version of that char equal to the original char
       const isLowerCase = char === char.toLowerCase();
   
       // If 1. and 2. are both true, char is a lower case letter
