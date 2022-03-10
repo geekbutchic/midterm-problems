@@ -37,17 +37,17 @@ const containsLowerCase = (str) => {
 const countWords = (str) => {
   spaceCounter = 1;
   oneWord = 1;
-    if(!str.includes(" ")){
-      return oneWord;
-    }
-    else{
-  for(let i = 0 ; i <= str.length; i++){
-    if(str[i] === " "){
-      spaceCounter = spaceCounter +1;
+  if (!str.includes(" ")) {
+    return oneWord;
+  } else {
+    for (let i = 0; i <= str.length; i++) {
+      if (str[i] === " ") {
+        spaceCounter = spaceCounter + 1;
+      }
     }
   }
-}return spaceCounter;
-}
+  return spaceCounter;
+};
 
 const containsUpperCase = (str) => {
   const regexp = /\.*[A-Z].*/g;
@@ -62,16 +62,10 @@ const containsNonAlphanumeric = (str) => {
   return regexp.test(str);
 };
 
-const digits = () => {
-
-};
+const digits = () => {};
 
 const containsSpace = (str) => {
-  if (str.split(" ").length - 1) {
-    return true;
-  } else {
-    return false;
-  }
+  return str.split(" ").length - 1 ? true : false;
 };
 
 const truncate = (str) => {
